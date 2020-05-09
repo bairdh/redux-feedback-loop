@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import Button from '@material-ui/core/Button';
 
-import {HashRouter, Link} from 'react-router-dom';
-
 class Review extends Component {
 
     submitFeedback = () => {

@@ -6,7 +6,7 @@ import registerServiceWorker from './registerServiceWorker';
 import axios from 'axios';
 import swal from 'sweetalert';
 // Redux
-import {createStore, combineReducers} from 'redux';
+import {createStore} from 'redux';
 import {Provider} from 'react-redux';
 
 const ratings = {
@@ -29,23 +29,16 @@ const postFeedback = (state = ratings, action) => {
     if(action.type === 'feeling'){
         state.feeling = Number(action.payload);
         console.log(`I got the feels:`, action.payload);
-        
     }
     else if(action.type === 'understanding'){
-        state.feeling = state.feeling;
         state.understanding = Number(action.payload);
         console.log(`You getting me?`, action.payload);
     }
     else if(action.type === 'support'){
-        state.feeling = state.feeling;
-        state.understanding = state.understanding;
         state.support = Number(action.payload);
         console.log(`Hold me up bro:`, action.payload);
     }
     else if(action.type === 'comments'){
-        state.feeling = state.feeling;
-        state.understanding = state.understanding;
-        state.support = state.support;
         state.comments = action.payload;
         console.log(`Ive got a comment for you`, action.payload);
         return state
