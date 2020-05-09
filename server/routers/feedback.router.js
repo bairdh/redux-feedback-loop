@@ -18,13 +18,15 @@ router.get('/', (req, res) =>{
 
 //POST
 router.post('/', (req, res) =>{
-    let feedback= req.data
+    let feedback= req.body
 
+    console.log(`Feedback:`, feedback);
+    
     let query = `
     INSERT INTO "feedback" ("feeling", "understanding", "support", "comments")
     VALUES ($1, $2, $3, $4);`;
 
-    pool.query(query, [feedback.feelings, feedback.understanding, feedback.support, feedback.comments])
+    pool.query(query, [feedback.feeling, feedback.understanding, feedback.support, feedback.comments])
     .then(result =>{
         res.sendStatus(201);
     }).catch(err =>{
