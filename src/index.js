@@ -10,9 +10,9 @@ import {createStore} from 'redux';
 import {Provider} from 'react-redux';
 
 const ratings = {
-    feeling: 0,
-    understanding: 0,
-    support: 0,
+    feeling: '',
+    understanding: '',
+    support: '',
     comments: ''
 }
 

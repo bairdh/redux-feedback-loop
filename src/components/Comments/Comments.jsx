@@ -13,6 +13,11 @@ class Comments extends Component{
         this.props.dispatch({type: 'comments', payload: this.state.comments});
     }
 
+     goToSupport = () =>{
+        this.props.history.push('/support');
+
+    }
+
     handleChange = event =>{
         this.setState({
             comments: event.target.value
@@ -36,6 +41,7 @@ class Comments extends Component{
                     <br/>
 
                 <Button variant='contained' onClick={this.goToReview}>next</Button>
+                <Button variant='contained' onClick={this.goToSupport}>previous</Button>
 
             </div>
         ) // return

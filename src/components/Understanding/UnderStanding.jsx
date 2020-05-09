@@ -19,8 +19,13 @@ class Understanding extends Component {
             return;
         }
 
-        this.props.history.push('/Support');
+        this.props.history.push('/support');
         this.props.dispatch({type: 'understanding', payload: this.state.understanding});
+    }
+
+    goToFeeling = () =>{
+        this.props.history.push('/');
+
     }
 
     handleChange = (event) =>{
@@ -65,6 +70,7 @@ class Understanding extends Component {
 
 
                 <Button variant='contained' onClick={this.goToSupport}>next</Button>
+                <Button variant='contained' onClick={this.goToFeeling}>previous</Button>
             </div>
         ) // return
     } // render

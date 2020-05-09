@@ -17,8 +17,13 @@ class Support extends Component {
             })
             return;
         }
-        this.props.history.push('/Comments');
+        this.props.history.push('/comments');
         this.props.dispatch({type: 'support', payload: this.state.support})
+    }
+
+    goToFeeling = () => {
+        this.props.history.push('/understanding');
+
     }
 
     handleChange = event => {
@@ -35,6 +40,7 @@ class Support extends Component {
                 <Input type='number' placeholder="Support" onChange={event => this.handleChange(event)}/>
 
                 <Button variant='contained' onClick={this.goToComments}>next</Button>
+                <Button variant='contained' onClick={this.goToUnderstanding}>previous</Button>
             </div>
         ) // return
     } // render

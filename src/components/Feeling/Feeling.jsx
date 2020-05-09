@@ -11,6 +11,7 @@ class Feeling extends Component {
     }
 
     goToUnderstanding = () =>{
+
         if(this.state.feeling === ''){
             swal({
                 icon: 'warning',
