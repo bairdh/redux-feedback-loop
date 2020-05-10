@@ -17,7 +17,7 @@ const ratings = {
 }
 
 const getFeedBack = (state = [], action) => {
-    axios.get('/').then(res =>{
+    axios.get('/admin').then(res =>{
         return res.data
     }).catch(err =>{
         console.log(err);

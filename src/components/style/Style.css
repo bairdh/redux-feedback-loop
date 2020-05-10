@@ -38,3 +38,8 @@
 .input{
   margin: 2%;
 }
+
+.changeReview:hover{
+  cursor: pointer;
+  color:#E65100;
+}

@@ -9,6 +9,7 @@ import Understanding from '../Understanding/UnderStanding';
 import Support from '../Support/Support';
 import Comments from '../Comments/Comments';
 import Review from '../Review/Review';
+import Admin from '../Admin/Admin';
 
 import '../style/Style.css';
 
@@ -54,6 +55,8 @@ class App extends Component {
                   render={(props) => <Comments {...props} dispatch={this.props.dispatch}/>}></Route>
           <Route path='/review' 
                   render={(props) => <Review {...props} dispatch={this.props.dispatch} feedback={this.props.reduxState}/>}></Route>
+          <Route path='/admin' 
+                  render={props => <Admin {...props}>}></Route>
         </HashRouter>
         <br/>
       </div>

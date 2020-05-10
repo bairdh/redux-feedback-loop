@@ -4,7 +4,7 @@ const pool = require('../modules/pool');
 
 
 //GET
-router.get('/', (req, res) =>{
+router.get('/admin', (req, res) =>{
     let query = `SELECT * FROM feedback;`;
     pool.query(query).then(result =>{
         // console.log(result.rows);

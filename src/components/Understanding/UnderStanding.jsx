@@ -10,7 +10,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Input from '@material-ui/core/Input';
 import { Box, Typography } from '@material-ui/core';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-import { teal, orange } from '@material-ui/core/colors';
+import {orange } from '@material-ui/core/colors';
 import '../style/Style.css';
 
 
@@ -63,7 +63,7 @@ class Understanding extends Component {
                 <Box boxShadow={3} maxWidth={500} minWidth={400} my={5} mx='auto' py={4} bgcolor="#FFFDE7" className="container">
                     <Typography variant="h3">Understanding</Typography>
                     <Box fontStyle="italic">
-                        <Typography variant="caption">Rate you're understanding of the content today</Typography>
+                        <Typography variant="caption">How well are you understanding the content?</Typography>
                     </Box>
                     <FormControl component="fieldset">
                         <RadioGroup aria-label="Feeling" name="radio" row={true} onChange={event => this.handleChange(event)}>

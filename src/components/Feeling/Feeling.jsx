@@ -60,7 +60,7 @@ class Feeling extends Component {
                 <Box boxShadow={3} maxWidth={500} minWidth={400} my={5} mx='auto' py={4} bgcolor="#FFFDE7" className="container">
                     <Typography variant="h3">Feeling</Typography >
                     <Box fontStyle="italic">
-                        <Typography variant="caption">Rate how you're feeling today between 0-5</Typography>
+                        <Typography variant="caption">How are you feeling today?</Typography>
                     </Box>
                     <FormControl component="fieldset">
                         <RadioGroup aria-label="understanding" name="radio" row={true} onChange={event => this.handleChange(event)}>

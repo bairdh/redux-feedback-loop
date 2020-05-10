@@ -1,9 +1,27 @@
 import React, { Component } from 'react';
-import Button from '@material-ui/core/Button';
-import { HashRouter, Link } from 'react-router-dom';
-import { Input } from '@material-ui/core';
-
+//Alert
 import swal from 'sweetalert';
+// Style
+import Button from '@material-ui/core/Button';
+import { Box, Typography } from '@material-ui/core';
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import { orange } from '@material-ui/core/colors';
+import '../style/Style.css';
+
+
+const theme = createMuiTheme({
+    palette: {
+        primary: {
+            main: orange[900],
+            dark: orange[400]
+        },
+        secondary: {
+            main: orange[400],
+            dark: orange[900]
+        }
+    }
+})
+
 
 
 class Review extends Component {
@@ -13,20 +31,21 @@ class Review extends Component {
             feeling: this.props.feedback.feeling,
             understanding: this.props.feedback.understanding,
             support: this.props.feedback.support,
-            comments: this.props.feedback.comment
+            comments: this.props.feedback.comments
         }
     }
 
     submitFeedback = () => {
         this.props.dispatch({type: 'submit'});
+
     }
 
     editFeedback = (event, prop) =>{
        swal({
             text: `Edit ${prop}`,
-            content:'input'
+            content: 'input'
         }).then(value => {
-            if(value === null){
+            if(value === null || value === ''){
                 return;
             }
             this.props.dispatch({type: prop, payload: value});
@@ -43,16 +62,27 @@ class Review extends Component {
         console.log(this.state);
         
         return (
-            <div>
-                <h1>Review</h1>
-                <p onClick={event => this.editFeedback(event, 'feeling')} >Feeling: {this.state.feedback.feeling}</p>
-                <p onClick={event => this.editFeedback(event, 'understanding')}>Understanding: {this.state.feedback.understanding}</p>
-                <p onClick={event => this.editFeedback(event, 'support')}>Support: {this.state.feedback.support}</p>
-                <p onClick={event => this.editFeedback(event, 'comments')}>Comment: {this.state.feedback.comments}</p>
-
-                <Button variant='contained' onClick={this.submitFeedback}>Submit</Button>
-
-            </div>
+            // <div>
+            //     <h1>Review</h1>
+            
+            
+            // </div>
+            
+            <MuiThemeProvider theme={theme}>
+                <Box boxShadow={3} maxWidth={500} minWidth={400} my={5} mx='auto' py={4} bgcolor="#FFFDE7" className="container">
+                    <Typography variant="h3">Review FeedBack</Typography >
+                    <Box fontStyle="italic">
+                        <Typography variant="caption">Click section to make Changes before submitting</Typography>
+                    </Box>
+                    <Box mb={4} >
+                        <Typography className='changeReview' onClick={event => this.editFeedback(event, 'feeling')} >Feeling: {this.state.feedback.feeling}</Typography>
+                        <Typography className='changeReview' onClick={event => this.editFeedback(event, 'understanding')}>Understanding: {this.state.feedback.understanding}</Typography>
+                        <Typography className='changeReview' onClick={event => this.editFeedback(event, 'support')}>Support: {this.state.feedback.support}</Typography>
+                        <Typography className='changeReview' onClick={event => this.editFeedback(event, 'comments')}>Comment: </Typography><Typography> {this.state.feedback.comments}</Typography>
+                    </Box>
+                    <Button variant='contained' color="secondary"onClick={this.submitFeedback}>Submit</Button>
+                </Box>
+            </MuiThemeProvider>
         ) // return
     } // render
 } //class
