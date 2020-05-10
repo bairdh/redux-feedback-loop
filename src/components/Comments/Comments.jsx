@@ -23,24 +23,28 @@ const theme = createMuiTheme({
 class Comments extends Component{
 
     state = {
-        comments: '',
-        charLimit: ''
+        comments: ''
     }
 
+    // going to the Reviw page
+    // And subitting a comment it there is one
     goToReview = () => {
         this.props.history.push('/review');
-        this.props.dispatch({type: 'comments', payload: this.state.comments});
+        if(this.state.comments != ''){
+            this.props.dispatch({type: 'comments', payload: this.state.comments});
+        }
     }
 
+    // going to the prevous page
      goToSupport = () =>{
         this.props.history.push('/support');
 
     }
 
+    // setting the state
     handleChange = event =>{
         this.setState({
-            comments: event.target.value,
-            charLimit: event.target.value
+            comments: event.target.value
         })
     }
 
@@ -58,7 +62,8 @@ class Comments extends Component{
                         id="outlined-margin-normal"
                         placeholder="Comments"
                         inputProps={{ maxLength: 200 }}  
-                        helperText={`${this.state.charLimit.length}/200`}                     margin="normal"
+                        helperText={`${this.state.comments.length}/200`}                     
+                        margin="normal"
                         variant="outlined"
                         multiline={true}
                         onChange={event => this.handleChange(event)}/>

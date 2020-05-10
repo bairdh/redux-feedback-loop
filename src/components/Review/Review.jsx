@@ -8,7 +8,6 @@ import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import { orange } from '@material-ui/core/colors';
 import '../style/Style.css';
 
-
 const theme = createMuiTheme({
     palette: {
         primary: {
@@ -22,8 +21,6 @@ const theme = createMuiTheme({
     }
 })
 
-
-
 class Review extends Component {
 
     state = {
@@ -35,11 +32,16 @@ class Review extends Component {
         }
     }
 
+    // Sending a dispatch to the reducer on click of the submit button
     submitFeedback = () => {
         this.props.dispatch({type: 'submit'});
 
     }
 
+    // On click of the different results an alert will pop up and 
+    // you may change your answer, but if you click out of the alert 
+    // or leave it blank it will not dipatch
+    // I could not get it to only except numbers, I this could break the code.
     editFeedback = (event, prop) =>{
        swal({
             text: `Edit ${prop}`,
@@ -62,12 +64,6 @@ class Review extends Component {
         console.log(this.state);
         
         return (
-            // <div>
-            //     <h1>Review</h1>
-            
-            
-            // </div>
-            
             <MuiThemeProvider theme={theme}>
                 <Box boxShadow={3} maxWidth={500} minWidth={400} my={5} mx='auto' py={4} bgcolor="#FFFDE7" className="container">
                     <Typography variant="h3">Review FeedBack</Typography >

@@ -31,6 +31,8 @@ class Understanding extends Component {
         understanding: ''
     }
 
+     // Throwing an alert of the question is not answered
+    // And send a dispatch to the reducer on click of the next button
     goToSupport = () =>{
          if(this.state.understanding === ''){
             swal({
@@ -39,16 +41,16 @@ class Understanding extends Component {
             })
             return;
         }
-
         this.props.history.push('/support');
         this.props.dispatch({type: 'understanding', payload: this.state.understanding});
     }
 
+    // going back to the previous page
     goToFeeling = () =>{
         this.props.history.push('/');
-
     }
 
+    // setting the state
     handleChange = (event) =>{
         this.setState({
             understanding: event.target.value
@@ -56,7 +58,6 @@ class Understanding extends Component {
     }
 
     render() {
-        // const [selectedValue, setSelectedValue] = React.useState('1');
         return (
             <MuiThemeProvider theme={theme}>
                 <Box boxShadow={3} maxWidth={500} minWidth={400} my={5} mx='auto' py={4} bgcolor="#FFFDE7" className="container">

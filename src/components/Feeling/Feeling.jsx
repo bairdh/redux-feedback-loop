@@ -33,8 +33,9 @@ class Feeling extends Component {
         feeling: ''
     }
 
+    // Throwing an alert of the question is not answered
+    // And send a dispatch to the reducer on click of the next button
     goToUnderstanding = () =>{
-
         if(this.state.feeling === ''){
             swal({
                 icon: 'warning',
@@ -46,6 +47,7 @@ class Feeling extends Component {
         this.props.dispatch({type: 'feeling', payload: this.state.feeling})
     }
 
+    // setting the state
     handleChange = (event) => {
         this.setState({
             feeling: event.target.value

@@ -24,8 +24,10 @@ const theme = createMuiTheme({
 
 class AdminItem extends Component{
   
+    // this sends a dispatch to the reducer to either flag an item or delete it
     reviewFeedback = (event, prop) => {
         if(prop === 'delete'){
+            // a prompt asking if they really want to delete
             swal({
                 title: "Are you sure?",
                 text: "Once deleted, you will not be able to recover this feedback!",
@@ -51,9 +53,8 @@ class AdminItem extends Component{
     }
 
     render(){
-        // this.props.getList();
         let flag;
-
+        // This changes the color of the flag depending if it's flagged or not
         if(this.props.item.flagged === false){
             flag = (<ErrorOutlineSharpIcon />)
         }

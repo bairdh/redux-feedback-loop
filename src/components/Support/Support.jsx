@@ -33,6 +33,8 @@ class Support extends Component {
         support: ''
     }
 
+    // Throwing an alert of the question is not answered
+    // And send a dispatch to the reducer on click of the next button
     goToComments = () =>{
          if(this.state.support === ''){
             swal({
@@ -45,11 +47,13 @@ class Support extends Component {
         this.props.dispatch({type: 'support', payload: this.state.support})
     }
 
+    // going to the prevous page
     goToUnderstanding = () => {
         this.props.history.push('/understanding');
 
     }
 
+    // setting the state
     handleChange = event => {
         this.setState({
             support: event.target.value

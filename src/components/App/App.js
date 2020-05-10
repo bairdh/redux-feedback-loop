@@ -19,6 +19,7 @@ class App extends Component {
     feedback: []
   }
   
+  // gets the feedback list for the Admin page
   getFeedback = () => {
     axios.get('/feedback/admin').then(res => {
       this.setState({

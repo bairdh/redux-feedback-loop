@@ -15,7 +15,8 @@ const ratings = {
     support: '',
     comments: ''
 }
-
+// reducer that receives and saves the feeedback results
+// as well as has the axios requests for updating the flagging and deleting
 const postFeedback = (state = ratings, action) => {
     if(action.type === 'feeling'){
         state.feeling = Number(action.payload);
