@@ -6,7 +6,7 @@ import swal from 'sweetalert';
 import Button from '@material-ui/core/Button';
 import { Box, Typography } from '@material-ui/core';
 import {MuiThemeProvider, createMuiTheme} from '@material-ui/core/styles';
-import { green, orange } from '@material-ui/core/colors';
+import { orange } from '@material-ui/core/colors';
 import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControl from '@material-ui/core/FormControl';

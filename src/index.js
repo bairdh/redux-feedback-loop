@@ -16,15 +16,6 @@ const ratings = {
     comments: ''
 }
 
-const getFeedBack = (state = [], action) => {
-    axios.get('/admin').then(res =>{
-        return res.data
-    }).catch(err =>{
-        console.log(err);
-        alert(`ERROR in GET, see log.`)
-    })
-}
-
 const postFeedback = (state = ratings, action) => {
     if(action.type === 'feeling'){
         state.feeling = Number(action.payload);
@@ -58,6 +49,42 @@ const postFeedback = (state = ratings, action) => {
             console.log(err);
         })
     }
+    else if(action.type === 'delete'){
+        axios.delete(`/feedback/admin/${action.payload}`)
+        .then(res => {
+            console.log(res);
+        }).catch(err => {
+            alert('ERROR in DELETE! see console.');
+            console.log(err);
+        })
+    }
+    else if(action.type === 'flagged'){
+        axios.put(`/feedback/admin/${action.payload}`)
+        .then(res => {
+            console.log(res);
+        }).catch(err => {
+            alert(`ERROR in PUT! see console`);
+            console.log(err)
+        })
+    }
+    // I can't access my feedback array, I think because it's
+    // asynchronous. When looking at it on google res.data shows up
+    // but once I set in in the state but when I send it to App.js it shows
+    // the Array as empty, until you 'unfold it' but I still can't access it.
+
+    // I also orginally wanted to have a separate reducer for the get and post
+    // but we never went over it in class so I don't know how to do it...
+    // ------------------------------------------
+    // else if(action.type === 'get'){
+    //     axios.get('/feedback/admin').then(res =>{
+    //        console.log(`got GET:`, res.data);
+    //        state.feedback = res.data;
+    //        return state;
+    //     }).catch(err =>{
+    //     console.log(err);
+    //     alert(`ERROR in GET, see log.`)
+    // })
+    // }
 
     return state;
 }

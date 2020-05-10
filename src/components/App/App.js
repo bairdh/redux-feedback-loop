@@ -18,13 +18,9 @@ class App extends Component {
   state = {
     feedback: []
   }
-
-  componentDidMount(){
-    this.getFeedback();
-  }
-
+  
   getFeedback = () => {
-    axios.get('/feedback').then(res => {
+    axios.get('/feedback/admin').then(res => {
       this.setState({
         feedback: res.data
       })
@@ -34,29 +30,25 @@ class App extends Component {
     })
   }
 
-  submitFeedback = () =>{
-
-  }
-
   render() {
-    console.log(this.props.reduxState);
+    console.log(this.state.feedback);
     
     return (
       <div className="App">
        <Header/>
         <HashRouter>
           <Route exact path='/'
-                  render={(props) => <Feeling {...props} dispatch={this.props.dispatch}/>}></Route>
+                  render={(props) => <Feeling {...props} dispatch={this.props.dispatch}/>}/>
           <Route path='/understanding' 
-                  render={(props) => <Understanding {...props} dispatch={this.props.dispatch} />}></Route>
+                  render={(props) => <Understanding {...props} dispatch={this.props.dispatch} />}/>
           <Route path='/support' 
-            render={(props) => <Support {...props} dispatch={this.props.dispatch} />}></Route>
+            render={(props) => <Support {...props} dispatch={this.props.dispatch} />}/>
           <Route path='/comments' 
-                  render={(props) => <Comments {...props} dispatch={this.props.dispatch}/>}></Route>
+                  render={(props) => <Comments {...props} dispatch={this.props.dispatch}/>}/>
           <Route path='/review' 
-                  render={(props) => <Review {...props} dispatch={this.props.dispatch} feedback={this.props.reduxState}/>}></Route>
+                  render={(props) => <Review {...props} dispatch={this.props.dispatch} feedback={this.props.reduxState}/>}/>
           <Route path='/admin' 
-                  render={props => <Admin {...props}>}></Route>
+            render={props => <Admin {...props} getList={this.getFeedback} review={this.state.feedback} dispatch={this.props.dispatch}/>}/>
         </HashRouter>
         <br/>
       </div>
