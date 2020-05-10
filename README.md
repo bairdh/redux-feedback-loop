@@ -1,9 +1,13 @@
-# Project Name
+# Feedback Survey
 
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
+## Introduction
 
-## Description
+This is a multi page feedback survey that asks:
+- How you're feeling today?
+- How well are you understanding the content?
+- How well are you being supported?
+- Any comments you want to leave?
 
-Your project description goes here. What problem did you solve? How did you solve it?
+While taking the survey you must answer the question displayed before moving on the next. At any point until the the results page you may go back the to previous page and re-answer the question. When you get to the results page you can still change your answer by clicking on the result you would like to change and ending to changed into the alert that pops up. After the feedback is submitted you will get an alert informing you if the submission success and be redirected back to the beginning of the survey so you complete another one.
 
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+There is also an admin page that you may access by going to /admin that displays a table of all the feedback submitting. On this page you may flag an item for later review or delete one that you no longer need.
