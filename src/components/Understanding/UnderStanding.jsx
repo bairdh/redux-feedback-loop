@@ -7,7 +7,6 @@ import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControl from '@material-ui/core/FormControl';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Input from '@material-ui/core/Input';
 import { Box, Typography } from '@material-ui/core';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import {orange } from '@material-ui/core/colors';
@@ -77,7 +76,7 @@ class Understanding extends Component {
                     </FormControl>
                     <br/>
                     <Button mx={4} variant='contained' color='primary' onClick={this.goToFeeling}>previous</Button>
-                    <Button variant='contained' color='secondary' onClick={this.goToSupport}>next</Button>
+                    <Button mx={10} variant='contained' color='primary' onClick={this.goToSupport}>next</Button>
                 </Box>
             </ MuiThemeProvider>
         ) // return

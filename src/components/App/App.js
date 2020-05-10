@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import axios from 'axios';
-import { HashRouter, Route, Link } from 'react-router-dom';
+import { HashRouter, Route } from 'react-router-dom';
 
 import Header from '../Header/Header';
 import Feeling from '../Feeling/Feeling';
@@ -30,9 +30,7 @@ class App extends Component {
     })
   }
 
-  render() {
-    console.log(this.state.feedback);
-    
+  render() {    
     return (
       <div className="App">
        <Header/>

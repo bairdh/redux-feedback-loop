@@ -6,7 +6,7 @@ const pool = require('../modules/pool');
 //GET
 router.get('/admin', (req, res) =>{
     let query = `SELECT * FROM feedback
-                ORDER BY date;`;
+                ORDER BY id ASC;`;
     pool.query(query).then(result =>{
         // console.log('This is the GET:', result.rows);
         res.send(result.rows);
@@ -37,7 +37,7 @@ router.post('/', (req, res) =>{
 
 //DELETE
 router.delete('/admin/:id', (req, res)=> {
-    let id = req.param.id;
+    let id = req.params.id;
     let query = `
     DELETE FROM feedback
     WHERE "id" = $1;`;
@@ -52,7 +52,7 @@ router.delete('/admin/:id', (req, res)=> {
 
 //PUT 
 router.put('/admin/:id', (req,res) => {
-    let id = req.param.id;
+    let id = req.params.id;
     let query = `UPDATE feedback
                 SET "flagged" = NOT "flagged"
                 WHERE "id" = $1;`;

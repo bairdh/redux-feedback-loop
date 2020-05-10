@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
+// Style
 import { Box, Typography } from '@material-ui/core';
 import { Table, TableBody, TableContainer, TableHead, TableRow, TableCell } from '@material-ui/core';
 import AdminItem from './AdminItem';
-import Button from '@material-ui/core/Button';
 import '../style/Style.css';
 
 class Admin extends Component{
@@ -13,7 +13,7 @@ class Admin extends Component{
 
 
     render(){
-        
+        this.props.getList();
         return (
             <Box boxShadow={3} maxWidth={600} minWidth={400} my={5} mx='auto' py={4} bgcolor="#FFFDE7" className="container">
                 <Typography variant='h2'>Feedback Results</Typography>

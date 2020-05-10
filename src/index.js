@@ -61,7 +61,6 @@ const postFeedback = (state = ratings, action) => {
     else if(action.type === 'flagged'){
         axios.put(`/feedback/admin/${action.payload}`)
         .then(res => {
-            console.log(res);
         }).catch(err => {
             alert(`ERROR in PUT! see console`);
             console.log(err)

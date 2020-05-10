@@ -1,10 +1,12 @@
 import React, {Component} from 'react';
+// Style
 import {TableCell, TableRow} from '@material-ui/core';
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 import ErrorOutlineSharpIcon from '@material-ui/icons/ErrorOutlineSharp';
-import Button from '@material-ui/core/Button';
 import {MuiThemeProvider, createMuiTheme} from '@material-ui/core/styles';
-import { orange, red } from '@material-ui/core/colors';
+import { orange } from '@material-ui/core/colors';
+
+// Alert
 import swal from 'sweetalert';
 
 const theme = createMuiTheme({
@@ -21,11 +23,8 @@ const theme = createMuiTheme({
 })
 
 class AdminItem extends Component{
-
-
-
-
-    reviewFeedback(event, prop){
+  
+    reviewFeedback = (event, prop) => {
         if(prop === 'delete'){
             swal({
                 title: "Are you sure?",
@@ -39,21 +38,20 @@ class AdminItem extends Component{
                     swal("Feedback has been deleted!", {
                         icon: "success",
                     });
-                    this.props.getList();
                 }
                 else{
                     swal("Feedback not deleted.");
                 }
             })
-
+            
         }
         else if(prop === 'flagged'){
-           this.props.dispatch({type:prop, payload: this.props.item.id});
+            this.props.dispatch({type:prop, payload: this.props.item.id});
         }
-        
     }
 
     render(){
+        // this.props.getList();
         let flag;
 
         if(this.props.item.flagged === false){

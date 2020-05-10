@@ -71,7 +71,8 @@ class Feeling extends Component {
                             <FormControlLabel labelPlacement='top' value='4' control={<Radio />} label="4" />
                             <FormControlLabel labelPlacement='top' value='5' control={<Radio />} label="5" />
                         </RadioGroup>
-                    </FormControl>                    <Button variant='contained' color='secondary' onClick={this.goToUnderstanding}>next</Button>
+                    </FormControl>                    
+                    <Button variant='contained' color='primary' onClick={this.goToUnderstanding}>next</Button>
                 </Box>
             </MuiThemeProvider>
         ) // return

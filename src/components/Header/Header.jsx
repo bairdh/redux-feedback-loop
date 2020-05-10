@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import { HashRouter, Route, Link } from 'react-router-dom';
 
 // Style
 import '../style/Style.css';
