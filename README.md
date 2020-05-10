@@ -20,3 +20,5 @@ in order for this app the work you must install:
 - npm install @material-ui/core
 - npm install @material-ui/icons
 - npm install sweetalert
+
+As well as everything for react, redux, react-router-dom
