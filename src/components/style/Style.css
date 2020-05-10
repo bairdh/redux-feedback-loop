@@ -1,0 +1,40 @@
+
+/* ---------- HEADER -----------  */
+
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-image: url('https://images.unsplash.com/photo-1416431168657-a6c4184348ab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1600&q=60');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 90vw;
+  /* min-height: 30vh; */
+  margin: 5%;
+  padding: 5%;
+ 
+}
+
+.App h1{
+  color: #37474F;
+  text-shadow: 1px 1px #FFFDE7;
+}
+
+.App h4{
+  color: #BBDEFB;
+}
+
+.App-title {
+  font-size: 4em;
+}
+
+.App-intro {
+  font-size: large; 
+}
+
+/* --------- Boxes --------- */
+
+.input{
+  margin: 2%;
+}

@@ -3,13 +3,14 @@ import {connect} from 'react-redux';
 import axios from 'axios';
 import { HashRouter, Route, Link } from 'react-router-dom';
 
+import Header from '../Header/Header';
 import Feeling from '../Feeling/Feeling';
 import Understanding from '../Understanding/UnderStanding';
 import Support from '../Support/Support';
 import Comments from '../Comments/Comments';
 import Review from '../Review/Review';
 
-import './App.css';
+import '../style/Style.css';
 
 class App extends Component {
 
@@ -41,13 +42,7 @@ class App extends Component {
     
     return (
       <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Feedback!</h1>
-          <h4><i>Don't forget it!</i></h4>
-          <HashRouter>
-            <Link to='/'>HOME</Link>
-          </HashRouter>
-        </header>
+       <Header/>
         <HashRouter>
           <Route exact path='/'
                   render={(props) => <Feeling {...props} dispatch={this.props.dispatch}/>}></Route>
